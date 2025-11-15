@@ -1,8 +1,9 @@
-import HubSpotDashboard from './components/Dashboard2';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
-    <HubSpotDashboard />
+    
+    <Dashboard />
   );
 }
 

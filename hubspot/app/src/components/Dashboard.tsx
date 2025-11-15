@@ -1,77 +1,13 @@
-import {
-  Home, Bookmark, Users, BadgeDollarSign, ShoppingBag, Workflow,
-  ChartNoAxesColumnDecreasing, Database, CardSim, TrendingUp, Mail,
-  Settings, HelpCircle, ChevronRight, Search, Plus, Phone, Calendar, Bell
-} from 'lucide-react';
+import React from 'react';
+import Sidebar from './Sidebar';
+import Navbar from './Navbar';
 
-export default function HubSpotDashboard() {
+export default function Dashboard() {
   return (
     <div className="flex h-screen bg-gray-50">
-
-      {/* Sidebar */}
-      <aside className="w-16 bg-[#47062a] flex flex-col items-center py-4 space-y-4 text-gray-300">
-
-        {/* Logo */}
-        <div className="w-10 h-10 bg-orange-500 rounded flex items-center justify-center">
-          <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6">
-            <path d="M18.5 8.5c0-.83-.67-1.5-1.5-1.5h-1V5c0-.83-.67-1.5-1.5-1.5S13 4.17 13 5v2h-2c-.83 0-1.5.67-1.5 1.5v2h-2c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h2v2c0 .83.67 1.5 1.5 1.5h2v2c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-2h2c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-2v-2h1c.83 0 1.5-.67 1.5-1.5z" />
-          </svg>
-        </div>
-
-        {/* Nav Icons */}
-        <nav className="ml-9 flex flex-col w-full space-y-6 pt-4">
-          <button><Home className="w-5 h-5" /></button>
-          <button><Bookmark className="w-5 h-5" /></button>
-          <button><Users className="w-5 h-5" /></button>
-          <button><TrendingUp className="w-5 h-5" /></button>
-          <button><Mail className="w-5 h-5" /></button>
-          <button><ShoppingBag className="w-5 h-5" /></button>
-          <button><BadgeDollarSign className="w-5 h-5" /></button>
-          <button><Workflow className="w-5 h-5" /></button>
-          <button><ChartNoAxesColumnDecreasing className="w-5 h-5" /></button>
-          <button><Database className="w-5 h-5" /></button>
-          <button><CardSim className="w-5 h-5" /></button>
-        </nav>
-
-        {/* Bottom */}
-        <nav className="flex flex-col space-y-6 mt-auto">
-          <button><Settings className="w-5 h-5" /></button>
-          <button><HelpCircle className="w-5 h-5" /></button>
-          <button><ChevronRight className="w-5 h-5" /></button>
-        </nav>
-      </aside>
-
-      {/* MAIN AREA (Navbar stays full width, content centered ONLY inside) */}
+      <Sidebar />
       <div className="flex-1 flex flex-col">
-
-        {/* Header */}
-        <header className="bg-[#47062a] text-white px-6 py-3 flex items-center justify-between">
-          <div className="flex items-center space-x-4 flex-1">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search HubSpot"
-                className="w-full bg-[#2d3e50] text-white pl-10 pr-4 py-2 rounded"
-              />
-            </div>
-            <button className="bg-[#2d3e50] p-2 rounded">
-              <Plus className="w-4 h-4" />
-            </button>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <button>Upgrade</button>
-            <Phone className="w-5 h-5" />
-            <Calendar className="w-5 h-5" />
-            <Bell className="w-5 h-5" />
-            <button className="bg-orange-500 px-4 py-1 rounded">+ Assistant</button>
-
-            <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
-              M
-            </div>
-          </div>
-        </header>
+        <Navbar />
 
         {/* BODY (CENTERED) */}
         <main className="flex-1 overflow-y-auto flex justify-center">
@@ -80,10 +16,10 @@ export default function HubSpotDashboard() {
             {/* Greeting */}
             <div className="flex justify-between mb-6">
               <div>
-                <p className="text-sm text-gray-500">Saturday, November 15, 2025</p>
-                <h1 className="text-3xl font-semibold">Good evening, Rakesh</h1>
-                <p className="text-gray-600 mt-2">
-                  <span className="font-semibold">Today</span> — your schedule is looking clear.
+                <p className="text-sm font-bold mb-3">Saturday, November 15, 2025</p>
+                <h1 className="text-4xl font-bold">Good evening, Rakesh</h1>
+                <p className="text-2xl mt-3">
+                  <span className="font-bold">Today</span> — your schedule is looking clear.
                 </p>
               </div>
               <button className="text-gray-600">⚙ Customize</button>
